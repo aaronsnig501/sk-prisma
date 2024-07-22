@@ -38,6 +38,7 @@
         </select>
       </li>
     </ul>
+    
   </nav>
 
   <slot />

@@ -1,5 +1,7 @@
 {
   "articles.list.h2": "Artigos",
+  "articles.list.search.input.placeholder": "Pesquisar Artigos",
+  "articles.list.search.input.aria_label": "Pesquisar Artigos",
   "articles.list.article.delete_button": "Eliminar Artigo",
   "articles.list.article.edit_button": "Editar Artigo",
 
