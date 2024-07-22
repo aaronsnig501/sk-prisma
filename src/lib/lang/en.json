@@ -1,7 +1,4 @@
 {
-  "layout.hgroup.h1": "Sveltekit & Prisma",
-  "layout.hgroup.h2": "Let's build a basic CRUD application with SvelteKit & Prisma",
-
   "articles.list.h2": "Articles",
   "articles.list.article.delete_button": "Delete Article",
   "articles.list.article.edit_button": "Edit Article",
