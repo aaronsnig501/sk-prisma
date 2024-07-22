@@ -39,6 +39,7 @@
 	"type": "module",
 	"dependencies": {
 		"@picocss/pico": "^2.0.6",
-		"@prisma/client": "^5.17.0"
+		"@prisma/client": "^5.17.0",
+		"svelte-i18n": "^4.0.0"
 	}
 }

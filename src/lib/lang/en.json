@@ -1,0 +1,18 @@
+{
+  "layout.hgroup.h1": "Sveltekit & Prisma",
+  "layout.hgroup.h2": "Let's build a basic CRUD application with SvelteKit & Prisma",
+
+  "articles.list.h2": "Articles",
+  "articles.list.article.delete_button": "Delete Article",
+  "articles.list.article.edit_button": "Edit Article",
+
+  "articles.new.h3": "New Article",
+  "articles.new.form.label.title": "Title",
+  "articles.new.form.label.content": "Content",
+  "articles.new.form.button.create": "Add Article",
+
+  "article.edit.h3": "Editing: ",
+  "articles.edit.form.label.title": "Title",
+  "articles.edit.form.label.content": "Content",
+  "articles.edit.form.button.edit": "Update Article"
+}
