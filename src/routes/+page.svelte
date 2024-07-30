@@ -3,7 +3,8 @@
   import { _ } from "svelte-i18n"
 
   export let data: PageData
-  $: ({ articles } = data)
+
+  $: ({ articles, user } = data)
 
   let searchTerm = ""
 
@@ -28,16 +29,19 @@
       <article>
         <header>{article.title}</header>
         <p>{article.content}</p>
+        {#if user}
         <form action="?/deleteArticle&id={article.id}" method="POST">
           <button type="submit" class="outline secondary">{$_("articles.list.article.delete_button")}</button>
           <a href="/{article.id}" role="button" class="outline contrast" style="width: 100%">
             {$_("articles.list.article.edit_button")}
           </a>
         </form>
+      {/if}
       </article>
     {/each}
   </div>
 
+  {#if user}
   <form action="?/createArticle" method="POST">
     <h3>{$_("articles.new.h3")}</h3>
     <label for="title">{$_("articles.new.form.label.title")}</label>
@@ -46,4 +50,5 @@
     <textarea id="content" name="content" rows={5} />
     <button type="submit">{$_("articles.new.form.button.create")}</button>
   </form>
+  {/if}
 </div>

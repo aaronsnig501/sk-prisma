@@ -5,6 +5,11 @@
   import { locale, waitLocale } from "svelte-i18n"
   import type { LayoutLoad } from "./$types"
   import { _, locales, isLoading } from "svelte-i18n"
+	import { enhance } from '$app/forms';
+
+  export let data: PageData
+
+  $: ({ user } = data)
 
   let userLanguage: string = "en"
 
@@ -22,6 +27,7 @@
   };
 </script>
 
+
 {#if !$isLoading}
 <div class="container">
   <nav>
@@ -30,6 +36,17 @@
     </ul>
 
     <ul>
+      <li>
+        {#if user}
+          <form action="/?/logout" method="post" use:enhance>
+            <button>{$_("layout.nav.auth.logout.link")}</button>
+          </form>
+        {:else}
+          
+        <a href="/auth/register">{$_("layout.nav.auth.register.link")}</a>
+        <a href="/auth/login">{$_("layout.nav.auth.login.link")}</a>
+        {/if}
+      </li>
       <li>
         <select {userLanguage} on:change={handleLocaleChange}>
           {#each $locales as locale, i}

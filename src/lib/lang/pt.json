@@ -1,4 +1,8 @@
 {
+  "layout.nav.auth.register.link": "Registar",
+  "layout.nav.auth.login.link": "Entrar",
+  "layout.nav.auth.logout.link": "Terminar a sessão",
+
   "articles.list.h2": "Artigos",
   "articles.list.search.input.placeholder": "Pesquisar Artigos",
   "articles.list.search.input.aria_label": "Pesquisar Artigos",
@@ -13,5 +17,19 @@
   "articles.edit.h3": "Edição: ",
   "articles.edit.form.label.title": "Título",
   "articles.edit.form.label.content": "Conteúdo",
-  "articles.edit.form.button.edit": "Atualizar Artigo"
+  "articles.edit.form.button.edit": "Atualizar Artigo",
+
+  "register.h2": "Registar",
+  "register.form.email.label": "E-mail",
+  "register.form.password.label": "Senha",
+  "register.form.button.text": "Registar",
+  "register.form.p.signin": "Já tem uma conta?",
+  "register.form.p.link": "Iniciar sessão aqui",
+
+  "login.h2": "Entrar",
+  "login.form.email.label": "E-mail",
+  "login.form.password.label": "Senha",
+  "login.form.button.text": "Entrar",
+  "login.form.p.signin": "Não tem uma conta?",
+  "login.form.p.link": "Registe-se aqui"
 }
