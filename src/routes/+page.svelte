@@ -42,7 +42,7 @@
       <article>
         <header>{article.title}</header>
         <p>{article.content}</p>
-        {#if user}
+        {#if user && article.userId === user.id}
         <form action="?/deleteArticle&id={article.id}" method="POST">
           <button type="submit" class="outline secondary">{$_("articles.list.article.delete_button")}</button>
           <a href="/article/{article.id}" role="button" class="outline contrast" style="width: 100%">

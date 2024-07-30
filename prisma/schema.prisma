@@ -19,6 +19,8 @@ model Article {
   id      Int @id @default(autoincrement())
   title   String
   content String
+  userId  String @default("gkzud4cci5jjyiw")
+  author  User @relation(references: [id], fields: [userId], onDelete: Cascade)
 }
 
 model User {
@@ -26,6 +28,7 @@ model User {
   email     String @unique
   password  String
   sessions  Session[]
+  articles  Article[]
 }
 
 model Session {
