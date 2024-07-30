@@ -12,8 +12,8 @@ export const load: PageServerLoad = async () => {
 }
 
 export const actions: Actions = {
-  createArticle: async ({ request }) => {
-    const { title, content } = Object.fromEntries(await request.formData()) as {
+  createArticle: async (event) => {
+    const { title, content } = Object.fromEntries(await event.request.formData()) as {
       title: string,
       content: string
     }
@@ -21,7 +21,9 @@ export const actions: Actions = {
     try {
       await prisma.article.create({
         data: {
-          title, content
+          userId: event.locals.user.id,
+          title, 
+          content,
         }
       })
     } catch (err) {
@@ -68,6 +70,6 @@ export const actions: Actions = {
       path: ".",
       ...sessionCookie.attributes
     })
-    redirect(302, "/login")
+    redirect(302, "/auth/login")
   }
 }
