@@ -7,11 +7,24 @@
   $: ({ articles, user } = data)
 
   let searchTerm = ""
+  let pageNumber = 1
+  let showMoreButton = true
 
   async function handleSearchTermChange() {
     const response = await fetch(`?/filterArticles&term=${searchTerm}`)
     const data = await response.json()
     articles = data
+  }
+
+  async function fetchMoreArticles() {
+    const response = await fetch(`?/scrollArticles&pageNumber=${pageNumber}`)
+    const data = await response.json()
+
+    if (data.length === 0) {
+      showMoreButton = false
+    }
+    articles = [...articles, ...data]
+    pageNumber += 1
   }
 </script>
 
@@ -39,6 +52,13 @@
       {/if}
       </article>
     {/each}
+    {#if showMoreButton}
+    <div role="group">
+      <button on:click={fetchMoreArticles}>More</button>
+    </div>
+    {:else}
+    <p>No more articles!</p>
+    {/if}
   </div>
 
   {#if user}

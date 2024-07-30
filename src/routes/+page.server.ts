@@ -5,7 +5,9 @@ import { lucia } from "$lib/server/auth"
 
 export const load: PageServerLoad = async () => {
   return {
-    articles: await prisma.article.findMany(),
+    articles: await prisma.article.findMany({
+      take: 10
+    }),
   }
 }
 
