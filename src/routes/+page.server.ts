@@ -70,6 +70,6 @@ export const actions: Actions = {
       path: ".",
       ...sessionCookie.attributes
     })
-    redirect(302, "/auth/login")
+    redirect(302, "/")
   }
 }
