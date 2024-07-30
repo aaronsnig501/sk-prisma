@@ -52,12 +52,13 @@
       {/if}
       </article>
     {/each}
+
     {#if showMoreButton}
     <div role="group">
-      <button on:click={fetchMoreArticles}>More</button>
+      <button on:click={fetchMoreArticles}>{$_("articles.list.pagination.button.text")}</button>
     </div>
     {:else}
-    <p>No more articles!</p>
+    <p>{$_("articles.list.pagination.empty")}</p>
     {/if}
   </div>
 

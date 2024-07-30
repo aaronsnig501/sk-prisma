@@ -8,6 +8,8 @@
   "articles.list.search.input.aria_label": "Search Articles",
   "articles.list.article.delete_button": "Delete Article",
   "articles.list.article.edit_button": "Edit Article",
+  "articles.list.pagination.button.text": "Load More",
+  "articles.list.pagination.empty": "No more articles!",
 
   "articles.new.h3": "New Article",
   "articles.new.form.label.title": "Title",
