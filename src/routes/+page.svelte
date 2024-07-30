@@ -32,7 +32,7 @@
         {#if user}
         <form action="?/deleteArticle&id={article.id}" method="POST">
           <button type="submit" class="outline secondary">{$_("articles.list.article.delete_button")}</button>
-          <a href="/{article.id}" role="button" class="outline contrast" style="width: 100%">
+          <a href="/article/{article.id}" role="button" class="outline contrast" style="width: 100%">
             {$_("articles.list.article.edit_button")}
           </a>
         </form>
