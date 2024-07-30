@@ -12,8 +12,8 @@ export const load: PageServerLoad = async () => {
 }
 
 export const actions: Actions = {
-  createArticle: async (event) => {
-    const { title, content } = Object.fromEntries(await event.request.formData()) as {
+  createArticle: async ({ request, locals }) => {
+    const { title, content } = Object.fromEntries(await request.formData()) as {
       title: string,
       content: string
     }
@@ -21,7 +21,7 @@ export const actions: Actions = {
     try {
       await prisma.article.create({
         data: {
-          userId: event.locals.user.id,
+          userId: locals.user.id,
           title, 
           content,
         }
@@ -59,14 +59,14 @@ export const actions: Actions = {
     }
   },
 
-  logout: async (event) => {
-    if (!event.locals.session) {
+  logout: async ({ locals, cookies }) => {
+    if (!locals.session) {
       return fail(401)
     }
 
-    await lucia.invalidateSession(event.locals.session.id)
+    await lucia.invalidateSession(locals.session.id)
     const sessionCookie = lucia.createBlankSessionCookie();
-    event.cookies.set(sessionCookie.name, sessionCookie.value, {
+    cookies.set(sessionCookie.name, sessionCookie.value, {
       path: ".",
       ...sessionCookie.attributes
     })
